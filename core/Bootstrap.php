@@ -47,14 +47,14 @@ class Bootstrap
         $frontController = new FrontController($this->view);
         $adminController = new AdminController($this->view);
 
-        // Frontend routes
-        $this->router->get('#^/$#', [$frontController, 'home']);
-        $this->router->get('#^/([a-z0-9-]+)$#', [$frontController, 'page']);
-
-        // Admin routes
+        // Admin routes (must come before generic page route)
         $this->router->get('#^/admin$#', [$adminController, 'dashboard']);
         $this->router->get('#^/admin/login$#', [$adminController, 'login']);
         $this->router->post('#^/admin/login$#', [$adminController, 'loginPost']);
+
+        // Frontend routes
+        $this->router->get('#^/$#', [$frontController, 'home']);
+        $this->router->get('#^/([a-z0-9-]+)$#', [$frontController, 'page']);
     }
 
     /**
