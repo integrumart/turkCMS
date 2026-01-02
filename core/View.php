@@ -45,7 +45,7 @@ class View
         $viewPath = Storage::themePath($this->theme, "{$view}.php");
         
         if (!Storage::exists($viewPath)) {
-            echo "View not found: {$view}";
+            echo "View not found: {$view}.php in theme {$this->theme}";
             return;
         }
 
@@ -82,7 +82,7 @@ class View
         $partialPath = Storage::themePath($this->theme, "partials/{$partial}.php");
         
         if (!Storage::exists($partialPath)) {
-            echo "Partial not found: {$partial}";
+            echo "Partial not found: partials/{$partial}.php in theme {$this->theme}";
             return;
         }
 
