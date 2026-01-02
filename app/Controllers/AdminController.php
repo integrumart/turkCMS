@@ -60,7 +60,12 @@ class AdminController
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 
-        // Placeholder authentication logic
+        // SECURITY NOTE: This is a placeholder implementation only.
+        // In production, implement proper authentication with:
+        // - Password hashing (password_hash/password_verify)
+        // - User data stored in JSON files with hashed passwords
+        // - Session management for logged-in users
+        // - CSRF protection
         if ($username === 'admin' && $password === 'admin') {
             echo "<h1>Login Successful</h1>";
             echo "<p>Welcome back, {$this->view->escape($username)}!</p>";
