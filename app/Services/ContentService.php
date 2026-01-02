@@ -63,7 +63,12 @@ class ContentService
                     continue;
                 }
 
-                [$key, $value] = explode(':', $line, 2);
+                $parts = explode(':', $line, 2);
+                if (count($parts) !== 2) {
+                    continue;
+                }
+
+                [$key, $value] = $parts;
                 $key = trim($key);
                 $value = trim($value);
 

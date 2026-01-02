@@ -83,6 +83,10 @@ class Router
         // Convert :param to named capture groups
         $pattern = preg_replace('/\:([a-zA-Z0-9_]+)/', '([^\/]+)', $pattern);
         
+        if ($pattern === null) {
+            throw new \RuntimeException('Invalid route pattern - regex compilation failed');
+        }
+        
         return '/^' . $pattern . '$/';
     }
 }
