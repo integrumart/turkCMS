@@ -110,6 +110,11 @@ class ContentService
         }
 
         $files = scandir($pagesDir);
+        
+        if ($files === false) {
+            return $pages;
+        }
+        
         foreach ($files as $file) {
             if (substr($file, -3) === '.md') {
                 $slug = substr($file, 0, -3);

@@ -30,8 +30,9 @@ class View
             throw new \RuntimeException("Template not found: {$template}.php in theme {$this->theme}");
         }
 
-        // Extract data to variables
-        extract($data);
+        // Extract data to variables for use in templates
+        // Safe to use here as data is controlled by the application, not user input
+        extract($data, EXTR_SKIP);
 
         // Start output buffering
         ob_start();

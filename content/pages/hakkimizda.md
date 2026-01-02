@@ -34,4 +34,4 @@ Bizimle iletişime geçmek için:
 - **E-posta**: info@kurumsalas.com.tr
 - **Adres**: İstanbul, Türkiye
 
-[Ana Sayfaya](/") dönün.
+[Ana Sayfaya](/) dönün.
